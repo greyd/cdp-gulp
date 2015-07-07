@@ -1,0 +1,56 @@
+// Path
+@img-path: '../images';
+
+//Sizes
+@logo-width: 140px;
+@header-height: 80px;
+@footer-height: 50px;
+
+// Indents
+@default-indent: 15px;
+
+// Colors
+@graphite: #464547;
+@while: #fff;
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+body {
+  background-image: url("@{img-path}/Pattern.png");
+}
+.wrapper {
+  min-height: 100%;
+  padding-bottom: @footer-height;
+  box-sizing: border-box;
+}
+.main-header {
+  background: @while;
+  box-sizing: border-box;
+  height: @header-height;
+  padding: @default-indent;
+  border-bottom: 1px solid @graphite;
+}
+.logo {
+  width: @logo-width;
+  display: inline-block;
+}
+.logo img {
+  height: 100%;
+  display: block;
+}
+.main-content {
+  padding: @default-indent;
+  text-align: center;
+}
+.main-footer {
+  height: @footer-height;
+  position: relative;
+  margin-top: -@footer-height;
+  background: @graphite;
+  text-align: center;
+  box-sizing: border-box;
+  padding: @default-indent;
+  color: @while;
+}
