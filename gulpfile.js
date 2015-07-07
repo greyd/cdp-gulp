@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var bower = require('gulp-bower');
 var less = require('gulp-less');
 
 var conf = {
@@ -13,7 +14,10 @@ var conf = {
 var bootstrap = {
     less: 'bower_components/bootstrap/less/bootstrap.less'
 };
-
+gulp.task('bower', function () {
+    return bower()
+        .pipe(gulp.dest('bower_components'));
+});
 gulp.task('style', function () {
     return gulp.src([conf.less, bootstrap.less])
         .pipe(less())

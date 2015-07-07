@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/greyd/cdp-gulp",
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "gulp-bower": "0.0.10",
+    "gulp-less": "^3.0.3"
   }
 }
