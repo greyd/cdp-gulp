@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var bower = require('gulp-bower');
 var less = require('gulp-less');
+var util = require('gulp-util');
 
 var conf = {
     less: 'src/less/*.less',
@@ -21,6 +22,7 @@ gulp.task('bower', function () {
 gulp.task('style', function () {
     return gulp.src([conf.less, bootstrap.less])
         .pipe(less())
+        .on('error', errorHandler)
         .pipe(gulp.dest(conf.build.css))
 });
 gulp.task('images', function () {
@@ -30,5 +32,9 @@ gulp.task('images', function () {
 gulp.task('build', ['style', 'images']);
 gulp.task('watch', ['build'], function () {
     gulp.watch(conf.less, ['style']);
-
 });
+
+function errorHandler(err){
+    util.log(util.colors.red('Error'), err.message);
+    this.end();
+}
