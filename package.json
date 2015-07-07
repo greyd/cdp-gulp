@@ -30,8 +30,10 @@
     "gulp-cached": "^1.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-csso": "^1.0.0",
+    "gulp-imagemin": "^2.3.0",
     "gulp-less": "^3.0.3",
     "gulp-remember": "^0.3.0",
-    "gulp-util": "^3.0.6"
+    "gulp-util": "^3.0.6",
+    "gulp.spritesmith": "^3.8.2"
   }
 }

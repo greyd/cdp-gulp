@@ -7,10 +7,18 @@ var remember = require('gulp-remember');
 var autoprefixer = require('gulp-autoprefixer');
 var csso = require('gulp-csso');
 var concat = require('gulp-concat');
+var imagemin = require('gulp-imagemin');
+var spritesmith = require('gulp.spritesmith');
 
 var conf = {
     less: 'src/less/*.less',
     images: 'src/images/*.{png,svg}',
+    icons: 'src/images/icons/*.png',
+    sprite: {
+        imgName: 'images/sprite.png',
+        cssName: 'css/sprite.css',
+        imgPath: '../images/sprite.png'
+    },
     build: {
         css: 'build/css',
         images: 'build/images'
@@ -48,6 +56,16 @@ gulp.task('style-build', ['bower'], function () {
 gulp.task('images', function () {
     return gulp.src(conf.images)
         .pipe(gulp.dest(conf.build.images))
+});
+gulp.task('images-build', function () {
+    return gulp.src(conf.images)
+        .pipe(imagemin())
+        .pipe(gulp.dest(conf.release.images))
+});
+gulp.task('sprite', function () {
+    var spriteData = gulp.src(conf.icons)
+        .pipe(spritesmith(conf.sprite));
+    return spriteData.pipe(gulp.dest('build/'));
 });
 gulp.task('build', ['style', 'images']);
 gulp.task('watch', ['build'], function () {
