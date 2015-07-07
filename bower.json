@@ -1,0 +1,28 @@
+{
+  "name": "cdp-gulp",
+  "version": "0.0.1",
+  "private": true,
+  "homepage": "https://github.com/greyd/cdp-gulp",
+  "authors": [
+    "Valerii Pavlov <pavlov.valerii@gmail.com>"
+  ],
+  "description": "Introguction to Gulp",
+  "keywords": [
+    "gulp",
+    "tutorial",
+    "introduction",
+    "cdp",
+    "epam"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
