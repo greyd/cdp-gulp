@@ -26,7 +26,9 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-bower": "0.0.10",
+    "gulp-cached": "^1.1.0",
     "gulp-less": "^3.0.3",
+    "gulp-remember": "^0.3.0",
     "gulp-util": "^3.0.6"
   }
 }
