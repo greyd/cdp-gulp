@@ -1,0 +1,26 @@
+{
+  "name": "cdp-gulp",
+  "version": "0.0.1",
+  "description": "Introduction to Gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/greyd/cdp-gulp.git"
+  },
+  "keywords": [
+    "gulp",
+    "tutorial",
+    "introduction",
+    "cdp",
+    "epam"
+  ],
+  "author": "Valerii Pavlov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/greyd/cdp-gulp/issues"
+  },
+  "homepage": "https://github.com/greyd/cdp-gulp"
+}
