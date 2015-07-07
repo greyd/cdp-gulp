@@ -25,8 +25,11 @@
   "homepage": "https://github.com/greyd/cdp-gulp",
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
     "gulp-bower": "0.0.10",
     "gulp-cached": "^1.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-csso": "^1.0.0",
     "gulp-less": "^3.0.3",
     "gulp-remember": "^0.3.0",
     "gulp-util": "^3.0.6"
