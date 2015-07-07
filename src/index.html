@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>EPAM CDP</title>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="css/all.css"/>
 </head>
 <body>
@@ -14,11 +15,32 @@
         </header>
 
         <section class="main-content">
-            <button class="btn">Hello world</button>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Hello world</button>
         </section>
     </div>
     <footer class="main-footer">
         &copy; 2015 EPAM Systems. All Rights Reserved.
     </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    Modal content
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 </html>
