@@ -1,0 +1,41 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+body {
+    background-image: url("../images/Pattern.png");
+}
+.wrapper {
+    min-height: 100%;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+}
+.main-header {
+    background: #fff;
+    box-sizing: border-box;
+    height: 80px;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}
+.logo {
+    width: 140px;
+    display: inline-block;
+}
+.logo img {
+    height: 100%;
+    display: block;
+}
+.main-content {
+    padding: 20px;
+    text-align: center;
+}
+.main-footer {
+    height: 50px;
+    position: relative;
+    margin-top: -50px;
+    background: #464547;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+    color: #fff;
+}
