@@ -28,3 +28,7 @@ gulp.task('images', function () {
         .pipe(gulp.dest(conf.build.images))
 });
 gulp.task('build', ['style', 'images']);
+gulp.task('watch', ['build'], function () {
+    gulp.watch(conf.less, ['style']);
+
+});
