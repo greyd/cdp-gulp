@@ -9,6 +9,7 @@ var csso = require('gulp-csso');
 var concat = require('gulp-concat');
 var imagemin = require('gulp-imagemin');
 var spritesmith = require('gulp.spritesmith');
+var del = require('del');
 
 var conf = {
     less: 'src/less/*.less',
@@ -20,10 +21,12 @@ var conf = {
         imgPath: '../images/build/sprite.png'
     },
     build: {
+        folder: 'build',
         css: 'build/css',
         images: 'build/images'
     },
     release: {
+        folder: 'release',
         css: 'release/css',
         images: 'release/images'
     }
@@ -71,6 +74,9 @@ gulp.task('prepare', ['style', 'images']);
 gulp.task('build', ['style-build', 'images-build']);
 gulp.task('watch', ['prepare'], function () {
     return gulp.watch(conf.less, ['style']);
+});
+gulp.task('clean', function (cb) {
+    del([conf.release.folder, conf.build.folder], cb);
 });
 
 function errorHandler(err){
