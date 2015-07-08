@@ -12,12 +12,12 @@ var spritesmith = require('gulp.spritesmith');
 
 var conf = {
     less: 'src/less/*.less',
-    images: 'src/images/*.{png,svg}',
+    images: ['src/images/**/*.{png,svg}', '!src/images/icons/**'],
     icons: 'src/images/icons/*.png',
     sprite: {
-        imgName: 'images/sprite.png',
-        cssName: 'css/sprite.css',
-        imgPath: '../images/sprite.png'
+        imgName: 'images/build/sprite.png',
+        cssName: 'less/build/sprite.less',
+        imgPath: '../images/build/sprite.png'
     },
     build: {
         css: 'build/css',
@@ -45,7 +45,7 @@ gulp.task('style', function () {
         .on('error', errorHandler)
         .pipe(gulp.dest(conf.build.css));
 });
-gulp.task('style-build', ['bower'], function () {
+gulp.task('style-build', ['bower', 'sprite'], function () {
     return gulp.src([conf.less, bootstrap.less])
         .pipe(less())
         .pipe(autoprefixer(['last 2 version']))
@@ -57,7 +57,7 @@ gulp.task('images', function () {
     return gulp.src(conf.images)
         .pipe(gulp.dest(conf.build.images))
 });
-gulp.task('images-build', function () {
+gulp.task('images-build', ['bower', 'sprite'], function () {
     return gulp.src(conf.images)
         .pipe(imagemin())
         .pipe(gulp.dest(conf.release.images))
@@ -65,10 +65,11 @@ gulp.task('images-build', function () {
 gulp.task('sprite', function () {
     var spriteData = gulp.src(conf.icons)
         .pipe(spritesmith(conf.sprite));
-    return spriteData.pipe(gulp.dest('build/'));
+    return spriteData.pipe(gulp.dest('src/'));
 });
-gulp.task('build', ['style', 'images']);
-gulp.task('watch', ['build'], function () {
+gulp.task('prepare', ['style', 'images']);
+gulp.task('build', ['style-build', 'images-build']);
+gulp.task('watch', ['prepare'], function () {
     return gulp.watch(conf.less, ['style']);
 });
 
